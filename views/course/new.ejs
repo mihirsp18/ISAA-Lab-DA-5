@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+<h1 class=" d-flex justify-content-center">
+	Adding Course Material
+</h1>
+<div class="jumbotron">
+	<form action="/new" class="mx-auto" method="POST">
+		<div class="form-group">
+			<input class="form-control " type="text" name="cName" placeholder="Name of the Course" required>
+		</div>
+		<div class="form-group">
+			<input class="form-control " type="text" name="cID" placeholder="Course ID" required>
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" type="text" name="cContent" placeholder="Course Content" rows="6"></textarea>
+		</div>
+		<div class="form-group">
+			<input class="btn  form-control btn-primary" type="submit">
+		</div>
+	</form>
+	<a href="/" class="btn btn-sg btn-secondary">Go Back </a>
+</div>
+
+<% include ../partials/footer %>

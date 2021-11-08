@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+<div class="container">
+
+<header class="jumbotron mt-5">
+	<div class="container">
+		<h1 class="display-3">List of Courses</h1>
+  			<p class="lead"></p>
+	<%if(currentUser.isFac){%>
+		<a class="btn btn-primary btn-lg" href="/new" role="button">Add New Course Materials</a>
+	<%}%>
+	</div>
+</header>
+
+<div class="row" style="display:flex; flex-wrap: wrap;">
+	<% list.forEach((course)=>{ %>
+	<div class="col-lg-2 col-md-3 col-sm-12">
+		<div class="card mx-auto" >
+			<img src="https://i.pinimg.com/originals/12/4f/55/124f55209dacad4cffd468e2997e1dec.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<%= course.name %>
+			</div>
+			<a href="course/<%=course.id%>" class="btn btn-warning">More Info</a>
+		</div>
+	</div>
+	<%})%>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIT E-Learning</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/styleSheets/main.css">
+</head>
+<body>
+	<nav class="navbar  navbar-expand-lg navbar-light bg-light ">
+	<a class="navbar-brand" href="/">VIT E-Learning <i class="material-icons">
+			auto_stories
+			</i></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/">List Of Courses</a>
+				</li>
+				<%if(currentUser.isFac){%>
+					<li class="nav-item">
+						<a class="nav-link" href="/new">Add Courses</a>
+					</li>
+				<%}%>
+
+			</ul>
+			<ul class=" navbar-nav">
+				<%if(currentUser==""){%>
+				<%}else{%>
+				<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+				<li class="nav-item"><a class="nav-link" href="/movies">Signed in as <%=currentUser.username%></a></li>
+				<%}%>
+			</ul>
+
+		</div>
+</nav>
+	<div class="container">
+		<%if(error && error.length>0){%> <div class="alert alert-danger" role="alert"><%=error%></div><%}%>
+		<%if(success && success.length>0){%><div class="alert alert-success" role="alert"><%=success%></div><%}%>
+	</div>
